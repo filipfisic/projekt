@@ -114,15 +114,15 @@ def podaci():
 @app.route("/grupe/<ime>")
 def grupe(ime):
     memeri = Group_member.query.filter_by(group_id=ime).all()
-    print(memeri)
+    #print(memeri)
 
     konacni = []
 
     for y in memeri:
         trenutni = Member.query.filter_by(id=str(y)[7]).first()
-        print("ovo je pokusaj: " + str(y)[7])
+        #print("ovo je pokusaj: " + str(y)[7])
         konacni.append(trenutni)
-        print("ovo je trenutni: " + str(trenutni))
+        #print("ovo je trenutni: " + str(trenutni))
         # print(y)
     return str(konacni)
 
