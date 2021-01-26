@@ -13,11 +13,11 @@ app.config['SESSION_TYPE'] = 'filesystem'
 
 @app.route("/index")
 def home():
-    print(str(get("http://127.0.0.1:5000/podaci")))
+    # print(str(get("http://127.0.0.1:5000/podaci")))
     podaci = get("http://127.0.0.1:5000/podaci")
     podaci = podaci[1:len(podaci) + 1]
     x = re.split("Group", podaci)
-    print("radi")
+    # print("radi")
 
     html = funkcija_grupe.fun_grupe(x)
 
@@ -43,7 +43,7 @@ def grupa(ime):
     podaci = get(link)
 
     #print("jel ovo istina:")
-    print(podaci)
+    # print(podaci)
     podaci = podaci[1:len(podaci) - 1]
     podaci = podaci.split("Member")
 
